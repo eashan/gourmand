@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:gravity="center">
+
+
+
+        <fragment
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="171dp"
+            android:id="@+id/map"
+            tools:context="com.example.eashan.test.near"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            tools:layout="@layout/abc_list_menu_item_icon"
+            android:layout_row="1"
+            android:layout_column="14"
+            android:layout_gravity="top"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/ratingBar2"
+            android:layout_alignStart="@+id/ratingBar2" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar2"
+            android:layout_row="10"
+            android:layout_column="15"
+            android:layout_below="@+id/map"
+            android:layout_alignLeft="@+id/listView"
+            android:layout_alignStart="@+id/listView" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="218dp"
+            android:id="@+id/listView"
+            android:layout_row="11"
+            android:layout_column="14"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+
+
+</RelativeLayout>
