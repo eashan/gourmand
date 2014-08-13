@@ -46,10 +46,11 @@ import org.apache.http.message.BasicNameValuePair;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 public class register extends Activity {
-   String name;
+    String name;
     String email;
     String password;
     private ProgressBar pb;
+    SessionManagement session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class register extends Activity {
         button.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
-
+        session = new SessionManagement(getApplicationContext());
 
 
                 // TODO Auto-generated method stub
@@ -108,32 +109,23 @@ public class register extends Activity {
                 } else
                 {
 
-                     name = nameText.getText().toString();
-                     email = emailText.getText().toString();
-                     password = passwordText.getText().toString();
+                    name = nameText.getText().toString();
+                    email = emailText.getText().toString();
+                    password = passwordText.getText().toString();
                     Log.w("Gourmand", "name=" + name + "&email=" + email + "&password=" + password);
-                   // new RegisterUser().execute(null,null,null);
+                    // new RegisterUser().execute(null,null,null);
                     pb.setVisibility(View.VISIBLE);
-                    new MyAsyncTask().execute(name,email,password);
-                    Intent homeintent = new Intent(register.this,
-                            main.class);
-                    startActivity(homeintent);
+                    new registerUser().execute(name,email,password);
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 
     private boolean isNetworkConnected() {
@@ -170,48 +162,60 @@ public class register extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-    private class MyAsyncTask extends AsyncTask<String, Integer, Double>{
+    private class registerUser extends AsyncTask<String, Integer, Boolean>{
 
         @Override
-        protected Double doInBackground(String... params) {
+        protected Boolean doInBackground(String... params) {
             // TODO Auto-generated method stub
-            postData(params[0],params[1],params[2]);
-
-            return null;
+            return postData(params[0],params[1],params[2]);
         }
 
-        protected void onPostExecute(Double result){
+        @Override
+        protected void onPostExecute(Boolean result){
             pb.setVisibility(View.GONE);
-            Toast.makeText(getApplicationContext(), "command sent", Toast.LENGTH_LONG).show();
+            if(result){
+                Log.w("Gourmand", "inside onPostExecute method ===> true");
+                Toast.makeText(register.this, "Registeration successful", Toast.LENGTH_LONG).show();
+                session.createLoginSession(name, email, password);
+                finish();
+            }else{
+                Log.w("Gourmand", "inside onPostExecute method ===> false");
+                Toast.makeText(register.this, "Registeration unsuccessful", Toast.LENGTH_LONG).show();
+            }
         }
         protected void onProgressUpdate(Integer... progress){
             pb.setProgress(progress[0]);
         }
 
-        public void postData(String name,String email,String password) {
+        private Boolean postData(String name,String email,String password) {
             // Create a new HttpClient and Post Header
             Log.w("inpost", "name=" + name + "&email=" + email + "&password=" + password);
 
 
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://14.97.44.164/registeruser.php");
+            HttpPost httppost = new HttpPost("http://14.97.169.176/gourmand/register");
 
             try {
                 // Add your data
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-                nameValuePairs.add(new BasicNameValuePair("Name", name));
-                nameValuePairs.add(new BasicNameValuePair("Email",email));
-                nameValuePairs.add(new BasicNameValuePair("Password",password));
+                nameValuePairs.add(new BasicNameValuePair("name", name));
+                nameValuePairs.add(new BasicNameValuePair("email",email));
+                nameValuePairs.add(new BasicNameValuePair("password",password));
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
                 // Execute HTTP Post Request
                 HttpResponse response = httpclient.execute(httppost);
-
+                int status = response.getStatusLine().getStatusCode();
+                Log.w("Gourmand", "status====>" + status);
+                return status == 200;
             } catch (ClientProtocolException e) {
                 // TODO Auto-generated catch block
+                return false;
             } catch (IOException e) {
                 // TODO Auto-generated catch block
+                return false;
             }
+
         }
 
     }

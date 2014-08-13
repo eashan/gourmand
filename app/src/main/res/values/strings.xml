@@ -7,10 +7,11 @@
     <string name="title_activity_home">home</string>
     <string name="title_activity_nearby">Map</string>
     <string name="title_activity_near">Map</string>
-    <string name="title_activity_result">result</string>
+    <string name="title_activity_result">Result</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
-    <string name="title_activity_search">search</string>
+    <string name="title_activity_information">Info</string>
+    <string name="title_activity_init">Init</string>
 
 </resources>

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 
 
 public class Home extends Activity {
@@ -21,16 +22,13 @@ public class Home extends Activity {
         Button find=(Button) findViewById(R.id.Find);
         find.setOnClickListener(new OnClickListener() {
             public void onClick(View v){
-                Intent search = new Intent(Home.this,
-                        search.class);
-                startActivity(search);
-
+                String query = ((EditText) findViewById(R.id.search_restaurant)).getText().toString();
+                Intent result = new Intent(Home.this, result.class);
+                result.putExtra("query", query);
+                startActivity(result);
             }
 
         });
-
-
-
 
     }
 

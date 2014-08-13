@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 public class main extends TabActivity {
 
+    SessionManagement session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,9 @@ public class main extends TabActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
+        session = new SessionManagement(getApplicationContext());
+        session.checkLogin();
     }
 
 
