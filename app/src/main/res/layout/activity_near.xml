@@ -12,26 +12,45 @@
             android:layout_width="match_parent"
             android:layout_height="171dp"
             android:id="@+id/map"
-            tools:context="com.example.eashan.test.near"
+            tools:context="com.codingc.team26.restofinder.near"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             tools:layout="@layout/abc_list_menu_item_icon"
             android:layout_row="1"
             android:layout_column="14"
             android:layout_gravity="top"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/listView" />
+            android:layout_alignLeft="@+id/resultlist" />
 
     <ListView
             android:layout_width="wrap_content"
             android:layout_height="218dp"
-            android:id="@+id/listView"
+            android:id="@+id/resultlist"
             android:layout_row="11"
             android:layout_column="14"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+        android:layout_below="@+id/filterbtn" />
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbnearby"
+        android:layout_alignBottom="@+id/resultlist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:indeterminate="false" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter"
+        android:id="@+id/filterbtn"
+        android:layout_below="@+id/map"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

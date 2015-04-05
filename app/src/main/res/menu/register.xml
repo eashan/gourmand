@@ -1,6 +1,6 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.eashan.test.register" >
+    tools:context="com.codingc.team26.restofinder.register" >
 
 </menu>

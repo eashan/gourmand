@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Gourmand</string>
+    <string name="app_name">Team 26</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">home</string>
@@ -13,5 +13,19 @@
     <string name="title_section3">Section 3</string>
     <string name="title_activity_information">Info</string>
     <string name="title_activity_init">Init</string>
+    <string name="title_activity_restaurant_info">restaurant_info</string>
+    <string name="title_activity_restaurant_map">restaurant_map</string>
+    <string name="title_activity_restaurant_reviews">restaurant_reviews</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_pandu">pandu</string>
+    <string name="title_activity_write_review">writeReview</string>
+    <string name="title_activity_write_areview">writeAReview</string>
+    <string name="title_activity_filter">filter</string>
+    <string name="title_activity_cuisine">cuisine</string>
+    <string name="title_activity_restaurant_menu">restaurant_menu</string>
+    <string name="title_activity_image_adapter">imageAdapter</string>
+    <string name="title_activity_full_screen">fullScreen</string>
+    <string name="title_activity_restaurant_photos">restaurant_photos</string>
+    <string name="title_activity_splash">Splash</string>
 
 </resources>

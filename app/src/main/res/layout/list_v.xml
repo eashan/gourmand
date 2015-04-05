@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@drawable/big_card">
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_weight="0.09"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/address_locality"
+        android:gravity="center_vertical|right"
+        android:textSize="30dp"
+        android:height="50dp"
+        android:paddingRight="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nameh"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/type"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:height="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/address_locality"
+        android:layout_below="@+id/nameh"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/type"
+        android:layout_toStartOf="@+id/type"
+        android:textSize="14dp"
+        android:textIsSelectable="false"
+        android:height="25dp" />
+
+</RelativeLayout>

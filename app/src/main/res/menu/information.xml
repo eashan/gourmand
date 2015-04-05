@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/writereview"
+        android:icon="@drawable/ic_action_edit"
+        android:title="Write A Review"
+        android:showAsAction="ifRoom" />
+</menu>

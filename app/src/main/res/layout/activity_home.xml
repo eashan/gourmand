@@ -7,7 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="#fff"
-    tools:context="com.example.eashan.test.Home">
+    tools:context="com.codingc.team26.restofinder.Home">
 
 
     <EditText
@@ -17,16 +17,17 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:hint="Search"
+        android:singleLine="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Search" />
+        android:layout_alignParentEnd="true" />
 
-    <Button
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find"
-        android:id="@+id/Find"
-        android:layout_below="@+id/search_restaurant"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/homelist"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/search_restaurant" />
 
 </RelativeLayout>

@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.eashan.test" >
+    package="com.codingc.team26.restofinder" >
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/team26"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".main"
-            android:label="@string/app_name" >
-            <intent-filter>
+            android:name=".Splash"
+            android:label="@string/app_name">
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
+        <activity
+            android:name=".main"
+            android:label="@string/app_name"
+           >
+        </activity>
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home" >
@@ -44,25 +47,66 @@
             android:label="@string/title_activity_result" >
         </activity>
         <activity
-            android:name=".Tab3Activity"
+            android:name=".Profile"
             android:label="@string/title_activity_result" >
         </activity>
         <activity
             android:name=".register"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".restaurant_info"
+            android:label="@string/title_activity_restaurant_info" >
+        </activity>
+        <activity
+            android:name=".restaurant_map"
+            android:label="@string/title_activity_restaurant_map" >
+        </activity>
+        <activity
+            android:name=".restaurant_reviews"
+            android:label="@string/title_activity_restaurant_reviews" >
+        </activity>
+        <activity
+            android:name=".writeReview"
+            android:label="@string/title_activity_write_review" >
+        </activity>
+        <activity
+            android:name=".filter"
+            android:label="@string/title_activity_filter" >
+        </activity>
+        <activity
+            android:name=".cuisine"
+            android:label="@string/title_activity_cuisine" >
+        </activity>
+        <activity
+            android:name=".restaurant_menu"
+            android:label="@string/title_activity_restaurant_menu" >
+        </activity>
+        <activity
+            android:name=".fullScreen"
+            android:label="@string/title_activity_full_screen" >
+        </activity>
+        <activity
+            android:name=".restaurant_photos"
+            android:label="@string/title_activity_restaurant_photos" >
+        </activity>
+
+
     </application>
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but are recommended.
-    -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
 </manifest>
